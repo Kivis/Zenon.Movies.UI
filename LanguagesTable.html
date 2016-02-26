@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Zenon Movies Library</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- AngularJS SCRIPTS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/angular.js"></script>
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="./index.html">
+                        <span style="color:red">Zenon ADMIN</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./MoviesTable.html">Movies Table</a>
+                </li>
+                <li>
+                    <a href="./GenresTable.html">Genres Table</a>
+                </li>
+                <li>
+                    <a href="./LanguagesTable.html">Languages Table</a>
+                </li>
+                <li>
+                    <a href="./DirectorsTable.html">Directors Table</a>
+                </li>               
+            </ul>
+            
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Languages Data Table</h1>
+                        <p>
+                            <div ng-app="myApp">
+                                <div class="container" ng-controller="library"> 
+                                    <div class="form-group">
+                                          <label for="usr">Search or Get by ID:</label>
+                                          <form class="form-inline">
+                                              <input type="text" ng-model="search" class="form-control" id='text-area'>
+                                              <button type="button" ng-click='getData()' class="btn btn-primary">GET</button>
+                                          </form>
+                                    </div>
+                                    
+                                   <div ng-show="specificLanguage" class="well" align="center"> 
+                                        <p><h3>Search Table</h3></p>
+                                        <table class="table table-hover">
+                                            <thead>
+                                                 <tr class="bg-primary">
+                                                    <th>Id</th>
+                                                    <th>Name</th>
+                                                  </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{specificLanguage.LanguageId}}</td>
+                                                    <td>{{specificLanguage.Name}}</td>
+
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                               <div class="thumbnail" align="center">
+                                     <p><h3>Languages</h3></p>
+                                        <table class="table table-hover">
+                                          <thead>
+                                              <tr class="bg-primary">
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody  >
+                                              <tr ng-repeat="language in languages | filter:search">
+                                                <td id="idField">{{ language.LanguageId }}</td>
+                                                <td>{{ language.Name }}</td>
+                                              </tr>
+                                            </tbody>
+                                        </table>
+                               </div>>
+                                </div>	
+                            </div>
+                        </p>
+                        <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

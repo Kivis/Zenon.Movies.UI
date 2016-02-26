@@ -7,34 +7,8 @@ app.controller('library', function($scope, $http)
 			$scope.movies = response;
 			
 		});
-	
-		function getDataInner(){
-			$http.get('http://localhost:32520/api/movies/'+$scope.search)
-				.success(function (response) {
-					$scope.specificMovie = response;
-				});
-				
-			$http.get('http://localhost:32520/api/genres'+$scope.search)
-				.success(function (response) {
-					$scope.specificGenre = response;
-			
-				});
-				
-			$http.get('http://localhost:32520/api/directors'+$scope.search)
-				.success(function (response) {
-					$scope.specificDirector = response;
-				});
-				
-			$http.get('http://localhost:32520/api/languages'+$scope.search)
-				.success(function (response) {
-					$scope.specificLanguage = response;
-				});
-		};
-	
-		$scope.getData = getDataInner;
-	
-	
-		$http.get('http://localhost:32520/api/genres')
+        
+        $http.get('http://localhost:32520/api/genres')
 		.success(function (response) {
 			$scope.genres = response;
 			
@@ -51,5 +25,30 @@ app.controller('library', function($scope, $http)
 			$scope.languages = response;
 			
 		});
+	
+		function getDataInner(){
+			$http.get('http://localhost:32520/api/movies/'+$scope.search)
+				.success(function (response) {
+					$scope.specificMovie = response;
+				});
+				
+			$http.get('http://localhost:32520/api/genres/'+$scope.search)
+				.success(function (response) {
+					$scope.specificGenre = response;
+			
+				});
+				
+			$http.get('http://localhost:32520/api/directors/'+$scope.search)
+				.success(function (response) {
+					$scope.specificDirector = response;
+				});
+				
+			$http.get('http://localhost:32520/api/languages/'+$scope.search)
+				.success(function (response) {
+					$scope.specificLanguage = response;
+				});
+		};
+	
+		$scope.getData = getDataInner;
 
 });
