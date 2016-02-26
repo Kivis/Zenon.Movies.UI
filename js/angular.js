@@ -13,6 +13,22 @@ app.controller('library', function($scope, $http)
 				.success(function (response) {
 					$scope.specificMovie = response;
 				});
+				
+			$http.get('http://localhost:32520/api/genres'+$scope.search)
+				.success(function (response) {
+					$scope.specificGenre = response;
+			
+				});
+				
+			$http.get('http://localhost:32520/api/directors'+$scope.search)
+				.success(function (response) {
+					$scope.specificDirector = response;
+				});
+				
+			$http.get('http://localhost:32520/api/languages'+$scope.search)
+				.success(function (response) {
+					$scope.specificLanguage = response;
+				});
 		};
 	
 		$scope.getData = getDataInner;
