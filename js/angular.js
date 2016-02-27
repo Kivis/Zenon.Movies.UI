@@ -3,16 +3,15 @@ var app = angular.module('myApp', []);
 app.controller('library', function($scope, $http)
 {
 		$http.get('http://localhost:32520/api/movies')
-		.success(function (response) {
-			$scope.movies = response;
-			
-		});
-        
+			.success(function (response) {
+				$scope.movies = response;
+			});
+		
         $http.get('http://localhost:32520/api/genres')
-		.success(function (response) {
-			$scope.genres = response;
-			
-		});
+			.success(function (response) {
+				$scope.genres = response;
+		
+			});
 		
 		$http.get('http://localhost:32520/api/directors')
 		.success(function (response) {
@@ -26,6 +25,24 @@ app.controller('library', function($scope, $http)
 			
 		});
 	
+		function insertGenreInner() {
+			var data = {'Name': $scope.name};
+			$http.post("http://localhost:32520/api/genres/", data);
+		};
+		$scope.insertGenre = insertGenreInner;
+		
+		function insertDirectorInner() {
+			$http.post("http://localhost:32520/api/directors/", {'FirstName': $scope.FirstName , 'LastName': $scope.LastName});
+
+		};
+		$scope.insertDirector = insertDirectorInner;
+		
+		function insertLanguageInner() {
+			$http.post("http://localhost:32520/api/languages/", {'Name': $scope.name});
+
+		};
+		$scope.insertLanguage = insertLanguageInner;
+		
 		function getDataInner(){
 			$http.get('http://localhost:32520/api/movies/'+$scope.search)
 				.success(function (response) {
@@ -35,7 +52,6 @@ app.controller('library', function($scope, $http)
 			$http.get('http://localhost:32520/api/genres/'+$scope.search)
 				.success(function (response) {
 					$scope.specificGenre = response;
-			
 				});
 				
 			$http.get('http://localhost:32520/api/directors/'+$scope.search)
@@ -52,3 +68,5 @@ app.controller('library', function($scope, $http)
 		$scope.getData = getDataInner;
 
 });
+
+
