@@ -69,4 +69,22 @@ app.controller('library', function($scope, $http)
 
 });
 
+app.directive('genresTables', function(){
+	return {
+		restrict: 'E',
+		templateUrl: './DataTables/genres-tables.html'
+	};
+});
+app.directive('languagesTables', function(){
+	return {
+		restrict: 'E',
+		templateUrl: './DataTables/languages-tables.html'
+	};
+});
+app.directive('directorsTables', function(){
+	return {
+		restrict: 'E',
+		templateUrl: './DataTables/directors-tables.html'
+	};
+});
 

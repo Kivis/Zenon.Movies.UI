@@ -19,7 +19,7 @@
 
     <!-- AngularJS SCRIPTS -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -68,54 +68,7 @@
                         <p>
                             <div ng-app="myApp">
                                 <div class="container" ng-controller="library"> 
-                                    <div class="form-group">
-                                          <label for="usr">Search or Get by ID:</label>
-                                          <form class="form-inline">
-                                              <input type="text" ng-model="search" class="form-control" id='text-area'>
-                                              <button type="button" ng-click='getData()' class="btn btn-primary">GET</button>
-                                          </form>
-										  <br>
-										  <form class="form-inline">
-                                                <input type="text" class="form-control" ng-model="name">
-                                                <button type="button" ng-click='insertGenre()' class="btn btn-primary">INSERT</button>
-                                          </form>
-                                    </div>
-                                    <div ng-show="specificGenre" class="well" align="center">
-                                        <p><h3>Search Table</h3></p>
-                                        <table class="table table-hover">
-                                            <thead>
-                                                 <tr class="bg-primary">
-                                                    <th>Id</th>
-                                                    <th>Name</th>
-                                                  </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                <tr>
-                                                    <td>{{specificGenre.GenreId}}</td>
-                                                    <td>{{specificGenre.Name}}</td>
-                                                </tr>
-                                            </tbody>
-
-                                        </table>
-                                    </div>
-                               <div class="thumbnail" align="center">
-                                     <p><h3>Genres</h3></p>
-                                        <table class="table table-hover">
-                                          <thead>
-                                              <tr class="bg-primary">
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                              </tr>
-                                            </thead>
-                                            <tbody  >
-                                              <tr ng-repeat="genre in genres | filter:search">
-                                                <td id="idField">{{ genre.GenreId }}</td>
-                                                <td>{{ genre.Name }}</td>
-                                              </tr>
-                                            </tbody>
-                                        </table>
-                                </div>
+									<genres-tables></genres-tables>
                                 </div>	
                             </div>
                         </p>
