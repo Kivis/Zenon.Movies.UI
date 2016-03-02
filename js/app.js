@@ -1,4 +1,4 @@
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ['tablesDirectives']);
 
 app.controller('library', function($scope, $http)
 {
@@ -68,23 +68,3 @@ app.controller('library', function($scope, $http)
 		$scope.getData = getDataInner;
 
 });
-
-app.directive('genresTables', function(){
-	return {
-		restrict: 'E',
-		templateUrl: './DataTables/genres-tables.html'
-	};
-});
-app.directive('languagesTables', function(){
-	return {
-		restrict: 'E',
-		templateUrl: './DataTables/languages-tables.html'
-	};
-});
-app.directive('directorsTables', function(){
-	return {
-		restrict: 'E',
-		templateUrl: './DataTables/directors-tables.html'
-	};
-});
-
