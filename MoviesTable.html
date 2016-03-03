@@ -32,31 +32,10 @@
 
 <body>
 
-    <div id="wrapper">
+    <div id="wrapper" ng-app="myApp">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="./index.html">
-                        <span style="color:red">Zenon ADMIN</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./MoviesTable.html">Movies Table</a>
-                </li>
-                <li>
-                    <a href="./GenresTable.html">Genres Table</a>
-                </li>
-                <li>
-                    <a href="./LanguagesTable.html">Languages Table</a>
-                </li>
-                <li>
-                    <a href="./DirectorsTable.html">Directors Table</a>
-                </li>               
-            </ul>
-            
-        </div>
+       <side-bar></side-bar>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
@@ -66,7 +45,7 @@
                     <div class="col-lg-12">
                         <h1>Movies Data Table</h1>
                         <p>
-                            <div ng-app="myApp">
+                            <div>
                                 <div class="container" ng-controller="library"> 
                                     <movies-tables></movies-tables>
                                 </div>	
