@@ -1,18 +1,32 @@
 var app = angular.module('myApp', ['tablesDirectives']);
 
-app.controller('library', function($scope, $http)
+
+app.service('myTask', function($http){
+	var task = this;
+	task.getGenresList = function() {
+		var listOfGenres = $http.get('http://localhost:32520/api/genres');
+		return listOfGenres;
+	};
+	return task;
+});
+
+app.controller('library', function($scope, $http, myTask)
 {
 		$http.get('http://localhost:32520/api/movies')
 			.success(function (response) {
 				$scope.movies = response;
 			});
 		
-        $http.get('http://localhost:32520/api/genres')
-			.success(function (response) {
-				$scope.genres = response;
+        //$http.get('http://localhost:32520/api/genres')
+		//	.success(function (response) {
+		//		$scope.genres = response;
+		//	});
 		
-			});
-		
+		var promise = myTask.getGenresList();
+		promise.success(function (response){
+			$scope.genres = response;
+		})
+			
 		$http.get('http://localhost:32520/api/directors')
 		.success(function (response) {
 			$scope.directors = response;
