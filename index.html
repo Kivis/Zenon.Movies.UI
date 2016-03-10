@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='myApp'>
 
 <head>
 
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Zenon Movies Library</title>
+    <title>MovieLibrary</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,25 +17,50 @@
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
-    <!-- AngularJS SCRIPTS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/tablesDirectives.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+     <!-- ANGULARJS FILES -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/directives/nw-movie.js"></script>
+        <script src="js/routes.js"></script>
+        <script src="js/controllers/library-index-controller.js"></script>
+        <script src="js/services/data.js"></script>
+
 
 </head>
 
 <body>
 
-    <div id="wrapper" ng-app="myApp">
+    <div id="wrapper">
 
         <!-- Sidebar -->
-       <side-bar></side-bar>
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Zenon ADMIN
+                    </a>
+                </li>
+                <li>
+                    <a href="./#/movies">Movies Table</a>
+                </li>
+                <li>
+                    <a href="./#/genres">Genres Table</a>
+                </li>
+                <li>
+                    <a href="./#/languages">Languages Table</a>
+                </li>
+                <li>
+                    <a href="./#/directors">Directors Table</a>
+                </li>               
+            </ul>
+            
+        </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
@@ -43,30 +68,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>All Data Tables</h1>
-                        <p>
-                                <div>
-                                    <div class="container" ng-controller="library"> 
-                                        <div class="form-group">
-                                            <label for="usr" >Search or Get by ID:</label>
-                                            <form class="form-inline">
-                                                <input type="text" ng-model="search" class="form-control" id='text-area'>
-                                                <button type="button" ng-click='getData()' class="btn btn-primary">GET</button>
-                                            </form>
-											<br>
-                                        <movies-search-tables></movies-search-tables>
-                                        <genres-search-tables></genres-search-tables>
-                                        <languages-search-tables></languages-search-tables>
-										<directors-search-tables></directors-search-tables>
-										
-										<movies-tables></movies-tables>
-										<genres-tables></genres-tables>
-										<directors-tables></directors-tables>
-										<languages-tables></languages-tables>
-                                    </div>	
-                                </div>
-                        </p>
-                        <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
+                            <div>
+                                <div class="container" ng-view></div>
+							</div>
                     </div>
                 </div>
             </div>
@@ -75,20 +79,14 @@
 
     </div>
     <!-- /#wrapper -->
-
+	
+	<!-- AngularJs ngRoute -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="js/libs/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+    <script src="js/libs/bootstrap.min.js"></script>
 
 </body>
 
