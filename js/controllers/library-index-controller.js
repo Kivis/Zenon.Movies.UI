@@ -12,10 +12,14 @@ angular.module('myApp')
 		.success(function (data) {
 			$scope.directors = data;
 			
-		});
+			});
 		Data.getAllLanguages()
 		.success(function (data) {
 			$scope.languages = data;
 			
-		});
+			});
+		$scope.insertGenre = function(genre) {Data.insertGenre(genre)};
+		$scope.insertMovie = function(movie) {Data.insertMovie(movie)};
+		$scope.insertDirector = function(director) {Data.insertDirector(director)};
+		$scope.insertLanguage = function(language) {Data.insertLanguage(language)};
 	});

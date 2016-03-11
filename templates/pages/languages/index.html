@@ -5,10 +5,10 @@
 		  <button type="button" ng-click='getData()' class="btn btn-primary">GET</button>
 	  </form>
 	  <br>
-		  <form class="form-inline">
-			<input type="text" class="form-control" ng-model="name" placeholder="Language name" required>
-			<button type="button" ng-click='insertLanguage()' class="btn btn-primary">INSERT</button>
-	  </form>
+		<form class="form-inline">
+			<input type="text" class="form-control" ng-model="language.name" placeholder="Language name" required>
+			<button type="button" ng-click='insertLanguage(language)' class="btn btn-primary">INSERT</button>
+	 	</form>
 </div>
 
 <div ng-show="specificLanguage" class="well" align="center"> 

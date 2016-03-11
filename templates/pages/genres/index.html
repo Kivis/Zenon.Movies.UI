@@ -6,8 +6,8 @@
 	  </form>
 	  <br>
 	  <form class="form-inline">
-			<input type="text" class="form-control" ng-model="name" placeholder="Genre Name" required>
-			<button type="button" ng-click='insertGenre()' class="btn btn-primary">INSERT</button>
+			<input type="text" class="form-control" ng-model="genre.name" placeholder="Genre Name" required>
+			<button type="button" ng-click='insertGenre(genre)' class="btn btn-primary">INSERT</button>
 	  </form>
 </div>
 <div ng-show="specificGenre" class="well" align="center">

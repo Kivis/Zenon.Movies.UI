@@ -5,10 +5,10 @@
 			  <button type="button" ng-click='getData()' class="btn btn-primary">GET</button>
 		  </form>
 		   <br>
-			  <form class="form-inline">
-				<input type="text" class="form-control" ng-model="FirstName" placeholder="FirstName" required>
-				<input type="text" class="form-control" ng-model="LastName" placeholder="LastName" required>
-				<button type="button" ng-click='insertDirector()' class="btn btn-primary">INSERT</button>
+		  <form class="form-inline">
+				<input type="text" class="form-control" ng-model="director.FirstName" placeholder="FirstName" required>
+				<input type="text" class="form-control" ng-model="director.LastName" placeholder="LastName" required>
+				<button type="button" ng-click='insertDirector(director)' class="btn btn-primary">INSERT</button>
 		  </form>
 	</div>
 	<div ng-show="specificDirector" class="well" align="center">

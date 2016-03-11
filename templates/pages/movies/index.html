@@ -4,6 +4,29 @@
 			  <input type="text" ng-model="search" class="form-control" id='text-area'>
 			  <button type="button" ng-click='getData()' class="btn btn-primary">GET</button>
 		  </form>
+		  <br>
+		  <form class="form-inline">
+				<input type="text" class="form-control" ng-model="movie.Title" placeholder="Title" required>
+				<br>
+				<select class="form-control" ng-model="movie.Genre" ng-options="genre.Name for genre in genres">
+    				  <option value="">-- choose genre --</option>
+   				</select>
+   				<br>
+   				<input type="date" class="form-control" ng-model="movie.ReleaseDate" placeholder="ReleaseDate" required>
+   				<br>
+   				<select class="form-control" ng-model="movie.Director" ng-options="director.FirstName group by director.LastName for director in directors">
+    				  <option value="">-- choose director --</option>
+   				</select>
+   				<br>
+   				<select class="form-control" ng-model="movie.Language" ng-options="language.Name for language in languages">
+    				  <option value="">-- choose language --</option>
+   				</select>
+   				<br>
+				<textarea rows="5" cols="50" class="form-control" ng-model="movie.Description" placeholder="description" required></textarea>
+				<br>
+				<button type="button" ng-click='insertMovie(movie)' class="btn btn-primary">INSERT</button>
+		  </form>
+
 	</div>
 	<div ng-show="specificMovie" class="well" align="center">
 		<p><h3>Search Table</h3></p>
