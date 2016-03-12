@@ -13,7 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
@@ -26,23 +26,27 @@
      <!-- ANGULARJS FILES -->
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/routes/routes.js"></script>
         <script src="js/directives/nw-movie.js"></script>
-        <script src="js/libs/routes.js"></script>
-        <script src="js/controllers/library-index-controller.js"></script>
-        <script src="js/services/data.js"></script>
-
+        <script src="js/controllers/movies-index-controller.js"></script>
+        <script src="js/controllers/languages-index-controller.js"></script>
+        <script src="js/controllers/genres-index-controller.js"></script>
+        <script src="js/controllers/directors-index-controller.js"></script>
+        <script src="js/services/moviesTableService.js"></script>
+        <script src="js/services/genresTableService.js"></script>
+        <script src="js/services/languagesTableService.js"></script>
+        <script src="js/services/directorsTableService.js"></script>
 
 </head>
 
 <body>
-
     <div id="wrapper">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
+                    <a href="./#/movies">
                         Zenon ADMIN
                     </a>
                 </li>

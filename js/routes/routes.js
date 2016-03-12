@@ -3,23 +3,23 @@ angular.module('myApp')
         $routeProvider
             .when('/genres', {
                 templateUrl: 'templates/pages/genres/index.html',
-                controller: 'LibraryIndexController'
+                controller: 'GenresIndexController'
             })
             .when('/directors', {
                 templateUrl: 'templates/pages/directors/index.html',
-                controller: 'LibraryIndexController'
+                controller: 'DirectorsIndexController'
             })
             .when('/languages', {
                 templateUrl: 'templates/pages/languages/index.html',
-                controller: 'LibraryIndexController'
+                controller: 'LanguagesIndexController'
             })
             .when('/movies', {
                 templateUrl: 'templates/pages/movies/index.html',
-                controller: 'LibraryIndexController'
+                controller: 'MoviesIndexController'
             })
             .when('/', {
                 templateUrl: 'templates/pages/movies/index.html',
-                controller: 'LibraryIndexController'
+                controller: 'MoviesIndexController'
             })
             .otherwise({redirectTo: '/'});
     });

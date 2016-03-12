@@ -36,12 +36,14 @@
 			<tr class="bg-primary">
 				<th>ID</th>
 				<th>Name</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody  >
 			<tr ng-repeat="genre in genres | filter:search">
 				<td id="idField">{{ genre.GenreId }}</td>
 				<td>{{ genre.Name }}</td>
+				<td><a href="#"><span class="glyphicon glyphicon-remove"></span></a></td>
 			</tr>
 		</tbody>
 	</table>
