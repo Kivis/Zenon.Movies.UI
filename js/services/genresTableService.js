@@ -6,6 +6,9 @@ angular.module("myApp")
 			},
 			insertGenre: function(genre) {
 				return $http.post("http://localhost:32520/api/genres/", genre);
+			},
+			deleteGenre: function(genreid) {
+				return $http.delete("http://localhost:32520/api/genres/", genre);
 			}
 		}
 	});

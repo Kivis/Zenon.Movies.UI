@@ -5,6 +5,6 @@ angular.module('myApp')
 
 		$scope.insertGenre = function(genre) {genresDataService.insertGenre(genre)};
 
-		
+		$scope.deleteGenre = function(genre) {genresDataService.deleteGenre(genre)};
 		
 	});
