@@ -6,6 +6,16 @@ angular.module('myApp')
 		directorsDataService.getAllDirectors().success(function (data) {$scope.directors = data;});
 		languagesDataService.getAllLanguages().success(function (data) {$scope.languages = data;});
 		
+		$scope.getMovieById = function(movie) {moviesDataService.getMovieById(movie)
+				.success(function (response) { $scope.specificMovie = response; });
+		};
+
 		$scope.insertMovie = function(movie) {moviesDataService.insertMovie(movie)};
+
+		$scope.deleteMovie = function(movie) {moviesDataService.deleteMovie(movie)
+			.then(function(){
+				moviesDataService.getAllMovies().success(function (data) {$scope.movies = data;});
+			});
+		};
 
 	});

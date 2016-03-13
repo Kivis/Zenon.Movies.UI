@@ -2,7 +2,7 @@
 		  <label for="usr">Search or Get by ID:</label>
 		  <form class="form-inline">
 			  <input type="text" ng-model="search" class="form-control" id='text-area'>
-			  <button type="button" ng-click='getData()' class="btn btn-primary">GET</button>
+			  <button type="button" ng-click='getDirectorById(search)' class="btn btn-primary">GET</button>
 		  </form>
 		   <br>
 		  <form class="form-inline">
@@ -40,6 +40,7 @@
 				<th>ID</th>
 				<th>FirstName</th>
 				<th>LastName</th>
+				<th></th>
 			  </tr>
 			</thead>
 			<tbody  >
@@ -47,6 +48,7 @@
 				<td id="idField">{{ director.DirectorId }}</td>
 				<td>{{ director.FirstName }}</td>
 				<td>{{ director.LastName }}</td>
+				<td><a href="" ng-click="deleteDirector(director.DirectorId)"><span class="glyphicon glyphicon-remove text-warning"></span></a></td>
 			  </tr>
 			</tbody>
 		</table>
